@@ -6,7 +6,7 @@ Description:
 [https://www.cyberyami.com](https://www.cyberyami.com)
 
 Flag is in the /robots.txt file.
-![[bot_1.png]]
+![](img/bot_1.png)
 Flag: `WHL{C00l_g0T_tH3_fl4G}`
 
 ## API 404
@@ -15,10 +15,10 @@ Description:
 > [http://3.108.252.117](http://3.108.252.117)
 
 Navigating to `/api/getflag` we get an error of "Try another browser" as you can see below:
-![[api404_1.png]]
+![](img/api404_1.png)
 
 I changed tried with  `X-Forwarded-For` header but it didn't work. Next I changed the `User-Agent` to curl and voila, I got the flag.
-![[api404_2.png]]
+![](img/api404_2.png)
 
 Flag: `WHL{Ap1_Ex1Sts_1n_tH3_W0rLd}`
 
@@ -38,7 +38,7 @@ Description:
 
 The target is an online store. We can purchase devices from the store. But if we try to purchase anything, we get `access denied` error message.
 Upon inspecting the parameters, there is a parameter called `admin` which is set to `false` on the request. Just change this value to `true` and we get the flag.
-![[cyberstore_1.png]]
+![](img/cyberstore_1.png)
 
 Flag: `WHL{Suc3sSfuLly_PurCh4s3d}`
 
@@ -50,7 +50,7 @@ Description:
 **Note : flag format WHL{a-zA-Z0-9_}**
 
 We get a downloadable pcap file. Challenge description says find the web traffic. So I set the filter on wireshark to `http`. On packet no. 1434, we have a http request with a GET parameter of `s=flag:4096b2b6ac329176d54a7d22e1fa034d`. From here, we get the flag.
-![[weired_1.png]]
+![](img/weired_1.png)
 
 Flag: `WHL{4096b2b6ac329176d54a7d22e1fa034d}`
 
@@ -60,7 +60,7 @@ Description:
 [https://drive.google.com/file/d/16LqDU0oCFCyis0MwshOz-kgMEf8moU-o/view?usp=sharing](https://drive.google.com/file/d/16LqDU0oCFCyis0MwshOz-kgMEf8moU-o/view?usp=sharing)
 
 Just grep the flag format from the dump file.
-![[dump_1.png]]
+![](img/dump_1.png)
 
 Flag: `WHL{E4sy_t0_f1Nd_th3_pr0c3ss}`
 
@@ -70,7 +70,7 @@ Description:
 [https://drive.google.com/file/d/1H3WEBLL_Ttw2PeZh839zq6QlvmYysimU/view?usp=sharing](https://drive.google.com/file/d/1H3WEBLL_Ttw2PeZh839zq6QlvmYysimU/view?usp=sharing)
 
 Just like the Dump challenge, grep the flag format.
-![[starwar_1.png]]
+![](img/starwar_1.png)
 
 Flag: `WHL{D0ck3R_F0r3nS1c}`
 
@@ -83,7 +83,7 @@ Flag hash is : 78a76e53c2a9e0c72e8f3e35c01c37fa
 We get a pcap file. Open it with wireshark and set filter to `http`. Now on packet no. 1911, you'll see a POST request. One of the parameters contains the flag. 
 `WHL{G???1_1S_4_fl4g}`
 But three of the characters are missing which are marked by the `?` symbol. I wrote this script to brute force the missing characters. For each iteration, it compares the hash with the given flag hash.
-![[http_1.png]]
+![](img/http_1.png)
 
 Flag: `WHL{GiNn1_1S_4_fl4g}
 `
@@ -97,7 +97,7 @@ After searching around the internet for this, came to know that it is the Pigpen
 Use this tool to decode.
 https://www.boxentriq.com/code-breaking/pigpen-cipher
 
-![[alien_1.png]]
+![](img/alien_1.png)
 
 Flag: `WHL{PEGPEN}`
 
@@ -107,10 +107,10 @@ Description:
 
 Use https://www.dcode.fr/cipher-identifier to identify which cipher it is.
 We see it is Morbit Cipher.
-![[morse_1.png]]
+![](img/morse_1.png)
 
 Use the decoder at https://www.dcode.fr/morbit-cipher
-![[morse_2.png]]
+![](img/morse_2.png)
 
 Flag: `WHL{IAMSUPERCIPHERMORSE}`
 
@@ -119,7 +119,7 @@ Description:
 > Can you escape HTML anywhere ?
 
 HTML decode the ciphertext to get the flag. I used Burpsuite Decoder.
-![[html_1.png]]
+![](img/html_1.png)
 
 Flag: `WHL{HTML_IS_NOT_JUST_LANGUAGE}`
 
@@ -131,7 +131,7 @@ Description:
 **Note : Flag format WHL{a-zA-z0-9_}**
 
 Looking at the ciphertext, it is clearly morse code. Use Cyberchef to decode it.
-![[signal_1.png]]
+![](img/signal_1.png)
 
 Flag: `WHL{M0RS3_C0D3_1S_TH3_B3ST_M3D1UM}`
 
@@ -139,7 +139,7 @@ Flag: `WHL{M0RS3_C0D3_1S_TH3_B3ST_M3D1UM}`
 Description: 
 > **Note : Flag format WHL{a-zA-Z0-9_}**
 
-![[keypad_1.png]]
+![](img/keypad_1.png)
 
 We are given this sequence of the keypad presses of a keypad phone
 ```txt
@@ -147,7 +147,7 @@ We are given this sequence of the keypad presses of a keypad phone
 ```
 We can use https://www.dcode.fr/multitap-abc-cipher to decode it.
 
-![[keypad_2.png]]
+![](img/keypad_2.png)
 
 Flag: `WHL{IT_IS_SMART_IT_IS_VULNERABLE}`
 
@@ -156,9 +156,9 @@ Description:
 > L0ts of QR, steganography is the best way to hide the data.
 
 Using stegseek, we get a zip file. Unzipping that zip file, we get some image files which are QR codes. I used zbarimg to decode the QR codes of each.
-![[img_1.png]]
+![](img/img_1.png)
 
-![[img_2.png]]
+![](img/img_2.png)
 
 Flag: `WHL{h1D1nG_d4T4_1n_qR}`
 
@@ -169,7 +169,7 @@ Description:
 This is a classic whitespace steganography challenge. The downloadable file contains whitespace which is basically a blank file.
 Use https://www.dcode.fr/whitespace-language to decode.
 
-![[ice_1.png]]
+![](img/ice_1.png)
 
 Flag: `WHL{Sp4c3_3V3rYwh3R3}`
 
@@ -181,7 +181,7 @@ Description:
 What is the SHA256 value of the file
 
 Just use this command to get the SHA256 hash of the exe file:
-![[putty_1.png]]
+![](img/putty_1.png)
 
 Flag: `WHL{0c82e654c09c8fd9fdf4899718efa37670974c9eec5a8fc18a167f93cea6ee83}`
 
@@ -191,7 +191,7 @@ Description:
 Use the putty file
 
 I uploaded the exe file to Virustotal. It is a 32-bit binary.
-![[architecture_1.png]]
+![](img/architecture_1.png)
 
 Flag: `32-bit`
 
@@ -202,7 +202,7 @@ Use the putty file
 
 From Virustotal, we can check the properties of the exe file. It is having properties of a packed binary.
 
-![[packer_1.png]]
+![](img/packer_1.png)
 Flag: `yes`
 
 ## Process
@@ -212,6 +212,6 @@ Use the putty file
 
 From Virustotal, we can see the executable is spawning powershell child process.
 
-![[process_1.png]]
+![](img/process_1.png)
 
 Flag: `powershell`
